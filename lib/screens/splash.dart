@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/login.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -6,6 +9,16 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    Timer(
+        Duration(seconds: 3),
+        () => Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (BuildContext context) => Login())));
+
+    super.initState();
+  }
+
   final Shader linearGradient = LinearGradient(
     colors: <Color>[
       Color(0xffDA44bb),
